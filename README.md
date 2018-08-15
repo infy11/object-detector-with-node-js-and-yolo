@@ -7,7 +7,7 @@
 
 ```
 
-`` sh 
+``` sh 
   node exp.js
   
 ```  
