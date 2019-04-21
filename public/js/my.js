@@ -37,8 +37,8 @@ $(document).ready(function(){
             },
             complete: function (data) {
                 $("#loader").hide();
-                $("#img-ele-a").attr('href', "uploads/predictions.png");
-                $("#img-ele-img").attr('src', "uploads/predictions.png");
+                $("#img-ele-a").attr('href', "uploads/predictions.jpg");
+                $("#img-ele-img").attr('src', "uploads/predictions.jpg");
                 $("#predicted").show();
                }
             

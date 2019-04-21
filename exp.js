@@ -107,6 +107,7 @@ app.post('/login',(req,res)=>
 
 app.get('/main',(req,res)=>
 {
+
   if(req.session.isauthenticated==true)
   {
     
@@ -172,12 +173,13 @@ app.post('/ajax', upload.single('avatar'),(req,res,next)=>{
 
  
   const { spawn } = require('child_process');
-  var ls = spawn( './darknet',['detector','test','cfg/combine9k.data','cfg/yolo9000.cfg','../yolo9000-weights/yolo9000.weights','/home/varnit/projects/mb/public/uploads/prediction.jpg']);
+  var ls = spawn( './darknet',['detect','cfg/yolov3.cfg','yolov3.weights','/home/ttn/object-detector-with-node-js-and-yolo/public/uploads/prediction.jpg']);
   function myfunction (callback )
 {
   ls.stdout.on( 'data', data => {
         console.log( `stdout: ${data}` );
-        shell.cp("/home/varnit/projects/yolo-9000/darknet/predictions.png","/home/varnit/projects/mb/public/uploads");
+        shell.cp("/home/ttn/object-detector-with-node-js-and-yolo/darknet/predictions.jpg","/home/ttn/object-detector-with-node-js-and-yolo/public/uploads");
+
         
 
         callback("done");
@@ -221,7 +223,7 @@ var shell = require('shelljs');
 
 'use strict';
 
-shell.cd('/home/varnit/projects/yolo-9000/darknet');
+shell.cd('/home/ttn/object-detector-with-node-js-and-yolo/darknet');
 
 
 
